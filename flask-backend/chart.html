@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.0.2"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"data": {"name": "data-55a8d3a2d715b4608ccf7338b8e82511"}, "encoding": {"y": {"field": "value", "type": "quantitative"}, "x": {"field": "time", "type": "temporal"}}, "datasets": {"data-55a8d3a2d715b4608ccf7338b8e82511": [{"value": "1", "time": "2020-08-20T11:46:09.011429"}, {"value": "1", "time": "2020-08-20T11:46:28.817437"}, {"value": "1", "time": "2020-08-20T16:07:11.903500"}, {"value": "1", "time": "2020-08-20T16:27:48.093974"}, {"value": "0", "time": "2020-08-23T14:17:02.731177"}, {"value": "0", "time": "2020-08-23T14:18:05.319789"}, {"value": "0", "time": "2020-08-23T14:18:06.933678"}, {"value": "0", "time": "2020-08-23T14:18:08.577942"}, {"value": "0", "time": "2020-08-23T14:18:09.992698"}, {"value": "0", "time": "2020-08-23T14:18:11.443976"}, {"value": "0", "time": "2020-08-23T14:18:12.939840"}, {"value": "0", "time": "2020-08-23T14:18:14.517683"}, {"value": "0", "time": "2020-08-23T14:18:16.119369"}, {"value": "0", "time": "2020-08-23T14:18:17.686539"}, {"value": "0", "time": "2020-08-23T14:18:19.735626"}, {"value": "0", "time": "2020-08-23T14:18:21.616034"}, {"value": "0", "time": "2020-08-23T14:18:23.173874"}, {"value": "0", "time": "2020-08-23T14:18:24.749738"}, {"value": "71", "time": "2020-08-23T14:19:22.110142"}, {"value": "69", "time": "2020-08-23T14:19:33.813202"}, {"value": "0", "time": "2020-08-23T14:19:45.458760"}, {"value": "0", "time": "2020-08-23T14:19:56.984443"}, {"value": "0", "time": "2020-08-23T14:20:08.633005"}, {"value": "0", "time": "2020-08-23T14:20:20.280188"}, {"value": "0", "time": "2020-08-23T14:20:31.950001"}, {"value": "0", "time": "2020-08-23T14:23:26.029188"}, {"value": "88", "time": "2020-08-23T14:23:40.830044"}, {"value": "89", "time": "2020-08-23T14:23:55.570820"}, {"value": "88", "time": "2020-08-23T14:24:10.912022"}, {"value": "98", "time": "2020-08-23T14:24:26.345306"}, {"value": "81", "time": "2020-08-23T14:24:41.401017"}, {"value": "80", "time": "2020-08-23T14:24:57.174946"}, {"value": "83", "time": "2020-08-23T14:25:12.122779"}, {"value": "88", "time": "2020-08-23T14:25:27.584000"}, {"value": "0", "time": "2020-08-23T14:25:58.412184"}, {"value": "0", "time": "2020-08-23T14:26:12.953389"}, {"value": "0", "time": "2020-08-23T14:26:27.804755"}, {"value": "71", "time": "2020-08-23T14:28:01.712732"}, {"value": "70", "time": "2020-08-23T14:28:16.564313"}, {"value": "64", "time": "2020-08-23T14:28:31.294834"}, {"value": "72", "time": "2020-08-23T14:29:30.294752"}, {"value": "91", "time": "2020-08-23T14:42:16.866142"}, {"value": "0", "time": "2020-08-23T14:42:31.558056"}, {"value": "0", "time": "2020-08-23T15:06:37.376120"}, {"value": "0", "time": "2020-08-23T15:06:49.650676"}, {"value": "0", "time": "2020-08-23T15:07:01.424746"}]}, "mark": "line", "config": {"projection": {"scale": 10}, "view": {"continuousWidth": 400, "continuousHeight": 300}}, "selection": {"selector001": {"encodings": ["x", "y"], "bind": "scales", "type": "interval"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.0.2.json"};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
