@@ -52,9 +52,15 @@ def main():
     if info['mode'] == 'AUTO':
         info['highV'] = mo.highV
         info['lowV'] = mo.lowV
-    elif info['mode'] == 'PROF':
-        info['interval'] = mo.interval
-        info['duration'] = mo.duration
+
+    data = Data.query.filter_by(espcode=espcode).order_by(
+        Data.time.desc()).limit(1).all()
+    info['moisture'] = data[0].value
+
+    f1 = open('count.txt', 'r')
+    count = int(f1.read())
+    f1.close()
+    info['count'] = count
 
     return jsonify(info)
 
@@ -63,8 +69,8 @@ def main():
 def automatic():
     if request.method == 'POST':
         espcode = request.json.get('espcode')
-        highV = int(request.json.get('highV'))
-        lowV = int(request.json.get('lowV'))
+        highV = 100
+        lowV = 50
 
         Mode.query.filter_by(espcode=espcode).delete()
 
@@ -108,12 +114,9 @@ def graph():
         l.append([i.time, i.value])
 
     ddf = pd.DataFrame(l, columns=['time', 'value'])
-    area = alt.Chart(ddf).mark_line().encode(
-        x='time:T',
-        y='value:Q',
-    ).configure_projection(
-        scale=10
-    ).interactive()
+
+    area = alt.Chart(ddf).mark_line().encode(x=alt.X('time:T', title='Time'), y=alt.Y('value:Q', title='Moisture %'), color=alt.value('#EE4266')).interactive(
+    ).configure(background='#16171B').configure_axisLeft(labelColor='white', titleColor='white').configure_axisBottom(labelColor='white', titleColor='white')
 
     return area.to_dict()
 

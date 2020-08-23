@@ -1,0 +1,119 @@
+.container {
+  width: var(--fixedWidth);
+  margin: auto;
+  padding-top: 50px;
+}
+
+.container .card {
+  background-color: var(--cardDark) !important;
+  -webkit-box-shadow: -20px 20px 60px #131417, 20px -20px 60px #191a1f;
+          box-shadow: -20px 20px 60px #131417, 20px -20px 60px #191a1f;
+  padding: 20px;
+  color: white;
+  overflow: hidden !important;
+}
+
+.container .moisture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .moisture img {
+  width: 180px;
+}
+
+.container .moisture .mValue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .moisture .mValue h4 {
+  font-weight: 400;
+  color: #f05173c0;
+  font-size: 0.95rem;
+}
+
+.container .moisture .mValue h1 {
+  color: white;
+  font-size: 3.6rem;
+}
+
+.container .moisture .mValue p,
+.container .moisture .mValue .date {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.container .moisture .mValue .date {
+  margin-top: 25px;
+}
+
+.container .moisture .extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .moisture .extra h4 {
+  font-weight: 400;
+  color: #f05173c0;
+}
+
+.container .mode {
+  margin: 30px auto !important;
+}
+
+.container .mode p {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.container .mode .manual,
+.container .mode .automatic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.container .mode .motorBtn,
+.container .mode .motorBtnDisabled {
+  background: var(--accent) !important;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  margin: 10px 0 !important;
+}
+
+.container .mode .motorBtnDisabled {
+  background: #f36a88 !important;
+  opacity: 0.4;
+}
+/*# sourceMappingURL=Home.module.css.map */

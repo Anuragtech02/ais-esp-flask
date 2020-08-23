@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  background-color: var(--primaryColor);
+  padding: 0 15%;
+
+  .logo {
+    flex: 1;
+    h3 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 8px;
+      color: white;
+      text-shadow: 5px 2px 10px #1a1a1a;
+    }
+  }
+  .navLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+
+    .navLink {
+      color: white;
+      text-decoration: none;
+      list-style: none;
+      margin: 0 20px;
+    }
+  }
+}
