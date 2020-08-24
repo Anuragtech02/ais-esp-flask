@@ -4,7 +4,9 @@ import styles from "./Home.module.css";
 import plant from "../../Assets/plant.png";
 import { Graph } from "../../components";
 import classNames from "classnames";
-import { Type } from "vega-lite/build/src/type";
+import ReactWeather from "react-open-weather";
+//Optional include of the default css styles
+import "react-open-weather/lib/css/ReactWeather.css";
 
 const Home = () => {
   const [automatic, setAutomatic] = useState(true);
@@ -56,9 +58,9 @@ const Home = () => {
     setMotorBtn(state === "ON" ? "Turn OFF Motor" : "Turn ON Motor");
   };
 
-  const handleMotor = (state) => {
+  const handleMotor = () => {
     setMotor(!motor);
-    toggleMotor(state);
+    toggleMotor(motor ? "OFF" : "ON");
   };
 
   useEffect(() => {
@@ -138,11 +140,18 @@ const Home = () => {
             <Button
               disabled={!manual}
               className={manual ? styles.motorBtn : styles.motorBtnDisabled}
-              onClick={() => handleMotor(motor ? "ON" : "OFF")}
+              onClick={handleMotor}
               variant="contained"
             >
               {motorBtn}
             </Button>
+          </Paper>
+          <Paper className={classNames(styles.card, styles.weather)}>
+            <ReactWeather
+              forecast="today"
+              apikey="1ed5003193ab8c0f6a6f6b29fbabe996"
+              type="auto"
+            />
           </Paper>
         </Grid>
         <Grid item lg={9} md={9} xs={12}>
