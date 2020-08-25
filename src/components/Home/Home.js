@@ -86,12 +86,12 @@ const Home = () => {
             setManual(true);
           }
         })
-        .catch((err) => alert(err));
+        .catch((err) => console.log(err));
     };
     fetchData();
     setInterval(() => {
       fetchData();
-    }, 60000);
+    }, 5000);
   }, []);
 
   return (
@@ -149,8 +149,9 @@ const Home = () => {
           <Paper className={classNames(styles.card, styles.weather)}>
             <ReactWeather
               forecast="today"
-              apikey="1ed5003193ab8c0f6a6f6b29fbabe996"
-              type="auto"
+              apikey="59c7c88bdf3b35ab1196565b9f049321"
+              type="city"
+              city="Indore"
             />
           </Paper>
         </Grid>

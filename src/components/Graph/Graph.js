@@ -29,7 +29,7 @@ export default function Graph(props) {
 
     setInterval(() => {
       fetchApi();
-    }, 60000);
+    }, 5000);
   }, [props.query, props.url]);
 
   return (

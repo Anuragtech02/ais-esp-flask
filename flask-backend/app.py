@@ -92,7 +92,7 @@ def manual():
         db.session.add(mo)
         db.session.commit()
 
-        ADAFRUIT_IO_KEY = 'aio_JFBr62C1tzaaB9lAn0uGWNDup5RB'
+        ADAFRUIT_IO_KEY = 'PUT_YOUR_OWN_KEY'
         ADAFRUIT_IO_USERNAME = 'anuragpal'
         aio = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
         espcodeAdafruit1 = "motor"
