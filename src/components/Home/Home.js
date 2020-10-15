@@ -48,13 +48,13 @@ const Home = () => {
       espcode: "esp1",
       data: state,
     };
-    fetch("http://127.0.0.1:5000/manual", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    // fetch("http://127.0.0.1:5000/manual", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // });
     setMotorBtn(state === "ON" ? "Turn OFF Motor" : "Turn ON Motor");
   };
 
@@ -72,26 +72,26 @@ const Home = () => {
     today = mm + "/" + dd + "/" + yyyy;
     setDate(today);
 
-    const fetchData = () => {
-      fetch("http://127.0.0.1:5000/home?code=esp1")
-        .then((res) => res.json())
-        .then((data) => {
-          setMoisture(data.moisture);
-          setWaterCount(data.count);
-          if (data.mode === "AUTO") {
-            setAutomatic(true);
-            setManual(false);
-          } else {
-            setAutomatic(false);
-            setManual(true);
-          }
-        })
-        .catch((err) => console.log(err));
-    };
-    fetchData();
-    setInterval(() => {
-      fetchData();
-    }, 5000);
+    // const fetchData = () => {
+    //   fetch("http://127.0.0.1:5000/home?code=esp1")
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       setMoisture(data.moisture);
+    //       setWaterCount(data.count);
+    //       if (data.mode === "AUTO") {
+    //         setAutomatic(true);
+    //         setManual(false);
+    //       } else {
+    //         setAutomatic(false);
+    //         setManual(true);
+    //       }
+    //     })
+    //     .catch((err) => console.log(err));
+    // };
+    // fetchData();
+    // setInterval(() => {
+    //   fetchData();
+    // }, 5000);
   }, []);
 
   return (
@@ -120,7 +120,7 @@ const Home = () => {
                 onChange={(e) => {
                   setAutomatic(e.target.checked);
                   setManual(!e.target.checked);
-                  sendData("auto");
+                  // sendData("auto");
                 }}
                 color="secondary"
               />
@@ -132,7 +132,7 @@ const Home = () => {
                 onChange={(e) => {
                   setManual(e.target.checked);
                   setAutomatic(!e.target.checked);
-                  sendData("manual");
+                  // sendData("manual");
                 }}
                 color="secondary"
               />
