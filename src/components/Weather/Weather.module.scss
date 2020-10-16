@@ -1,0 +1,15 @@
+.conatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.tempLocation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    font-size: 1.1rem;
+    margin: 20px 0;
+  }
+}

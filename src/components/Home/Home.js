@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Paper, Grid, Switch, Button } from "@material-ui/core";
 import styles from "./Home.module.css";
 import plant from "../../Assets/plant.png";
-import { Graph } from "../../components";
+import { Graph, Weather } from "../../components";
 import classNames from "classnames";
 import ReactWeather from "react-open-weather";
 //Optional include of the default css styles
@@ -147,12 +147,7 @@ const Home = () => {
             </Button>
           </Paper>
           <Paper className={classNames(styles.card, styles.weather)}>
-            <ReactWeather
-              forecast="today"
-              apikey="59c7c88bdf3b35ab1196565b9f049321"
-              type="city"
-              city="Indore"
-            />
+            <Weather />
           </Paper>
         </Grid>
         <Grid item lg={9} md={9} xs={12}>
@@ -162,11 +157,11 @@ const Home = () => {
                 <p>Moisture vs Time</p>
               </div>
               <div className={styles.graphContainer}>
-                <Graph
+                {/* <Graph
                   className={styles.graph}
                   url="http://127.0.0.1:5000"
                   query="esp1"
-                />
+                /> */}
               </div>
             </div>
           </Paper>
