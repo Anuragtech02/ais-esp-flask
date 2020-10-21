@@ -7,7 +7,7 @@
 
 ## What is AIS ?
 
-### AIS is a wifi enabled, smart plant watering system that uses [ESP](https://en.wikipedia.org/wiki/ESP32) and some other sensors to calculate the moisture value and smartly water your plants without any manual assistance.
+AIS is a wifi enabled, smart plant watering system that uses [ESP](https://en.wikipedia.org/wiki/ESP32) and some other sensors to calculate the moisture value and smartly water your plants without any manual assistance.
 
 ![ais](./src/Assets/screenshot.jpg)
 
