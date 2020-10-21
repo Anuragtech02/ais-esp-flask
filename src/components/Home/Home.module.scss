@@ -50,6 +50,22 @@
         color: #f05173c0;
       }
     }
+
+    .graphContainer {
+      position: relative;
+      h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        max-width: 100%;
+        min-width: 80%;
+        width: auto;
+        filter: grayscale(0.4);
+      }
+    }
   }
   .mode {
     margin: 30px auto !important;

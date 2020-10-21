@@ -7,6 +7,7 @@ import classNames from "classnames";
 import ReactWeather from "react-open-weather";
 //Optional include of the default css styles
 import "react-open-weather/lib/css/ReactWeather.css";
+import notAvailable from "../../Assets/notavailable.png";
 
 const Home = () => {
   const [automatic, setAutomatic] = useState(true);
@@ -97,7 +98,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <Grid container spacing={4}>
-        <Grid item lg={3} md={3} xs={12}>
+        <Grid item lg={3} md={4} xs={12}>
           <Paper className={classNames(styles.card, styles.moisture)}>
             <div className={styles.mValue}>
               <p>Moisture</p>
@@ -150,7 +151,7 @@ const Home = () => {
             <Weather />
           </Paper>
         </Grid>
-        <Grid item lg={9} md={9} xs={12}>
+        <Grid item lg={9} md={8} xs={12}>
           <Paper className={classNames(styles.card, styles.moisture)}>
             <div className={styles.mValue}>
               <div className={styles.values}>
@@ -162,6 +163,8 @@ const Home = () => {
                   url="http://127.0.0.1:5000"
                   query="esp1"
                 /> */}
+                <img src={notAvailable} alt="not-available" />
+                <h3>Server Error!</h3>
               </div>
             </div>
           </Paper>
